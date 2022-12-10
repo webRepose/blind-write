@@ -147,7 +147,7 @@ $(document).ready(()=>{
     //     document.getElementsByTagName('main')[0].appendChild(s);
     //     return s;  // to remove it later
     // }
-    $('#type-text').bind('click',()=>{
+    $('.type-text').bind('click',()=>{
         // m++
         // if(m>1) {
         //     return false
@@ -221,7 +221,7 @@ $(document).ready(()=>{
     //     document.getElementsByTagName('main')[0].appendChild(s);
     //     return s;  // to remove it later
     // }
-    $('#type-cpacha').bind('click',()=>{
+    $('#type-capcha').bind('click',()=>{
         $.ajax({
             url: 'capcha/setting.html',
             type: 'GET',
