@@ -137,9 +137,9 @@ function startTimer() {
     }
 
     function backSpace() {
-    var txt = inputArea.value;
-    txt = txt.substr(0,txt.length - 1);
-    inputArea.value = txt;
+    var backFun = inputArea.value;
+    backFun = backFun.substr(0,backFun.length - 1);
+    inputArea.value = backFun;
     }
 
     let simbolsCount = 0,
