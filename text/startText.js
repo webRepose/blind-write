@@ -147,6 +147,9 @@ function startTimer() {
     wordsCount = 0,
     rightValue = 0;
     inputArea.onkeypress = function(event) {
+        // if(event.) {
+
+        // }
         startTimer();
         if(event.key == inputText.value) {
             rightValue++;
