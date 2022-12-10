@@ -1,0 +1,30 @@
+.footer {
+  display: none;
+  padding: 15px 0;
+  background-color: var(--historyBack-color);
+  border-radius: 20px 20px 0 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+.footer-menu {
+  display: flex;
+  margin: 0 60px;
+  justify-content: space-between;
+}
+.footer-menu a {
+  margin-right: 20px;
+}
+.footer-menu a:last-child {
+  margin-right: 0;
+}
+.footer p {
+  text-align: center;
+}
+.footer svg {
+  width: 35px;
+  height: 33.2px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  padding: 20px 93px 10px 93px;
+  background-color: var(--Section-color);
+  border-radius: 0 0 20px 20px;
+  height: 60px;
+}
+.header .menu {
+  width: 1000px;
+}
+.header .menu-list {
+  display: flex;
+  justify-content: space-between;
+}
+.header .menu-list li {
+  display: inline-block;
+  list-style: none;
+}
+.header .menu-list a {
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 400;
+}
+.header .menu svg {
+  width: 32px;
+  height: 25px;
+}
+.header-select {
+  margin-left: auto;
+  position: relative;
+}
+.header-lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+  outline: none;
+  background-color: var(--select-color);
+  border: 0;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #DFD2D2;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.header-lang:hover {
+  border: 1px solid --border-color;
+}
+.header-account {
+  cursor: pointer;
+  height: 50px;
+  width: 55px;
+  background-color: var(--select-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-left: 30px;
+}/*# sourceMappingURL=header.css.map */

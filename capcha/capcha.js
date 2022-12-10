@@ -1,0 +1,1 @@
+// window.localStorage.setItem('url', 'capcha/setting.html');
