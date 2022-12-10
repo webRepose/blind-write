@@ -1,8 +1,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
-    --Body-color: #0F0F0F;
-    --Section-color: #272727;
-    --select-color: #15161a;
+    --Body-color: #000;
+    --Section-color: #111;
+    --select-color: #222222;
+    --green-color:#037912;
     --border-color: #686868;
     --otherBack-color: #2e2e2e;
     --historyBack-color: #1b1b1d;
