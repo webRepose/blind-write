@@ -152,32 +152,15 @@ function startTimer() {
             return false
         }
 
-        // startTimer();
-        // console.log(event.code)
-        // if(event.keyCode === 1044) {
-        //     d = 'Д'
-        // } else if (event.keyCode === 1072) {
-        //     d = 'а'
-        // }
+        startTimer();
 
-        if(inputText.value === event.key) {
-            rightValue++;
-            inputText.value = textInput[rightValue];
-            if(event.key == ' ' || event.key == '-' ) {
-                wordsCount++;
-                inputWords.innerHTML = wordsCount;
-                window.localStorage.setItem('WordsCount', wordsCount);
-                document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
-            }
-            else if(textInput[rightValue]) {
-                simbolsCount++;
-                inputSimbols.innerHTML = simbolsCount;
-                window.localStorage.setItem('SimbolsCount', simbolsCount);
-                document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
-            }
-            
-
-        } else {
+        if(inputText.value === 'Д') {
+            e()
+        }
+        else if(inputText.value === 'а') {
+            e()
+        }
+        else {
             errorCount++;
             inputErorr.innerHTML = errorCount;
             window.localStorage.setItem('ErrorsCount', errorCount);
@@ -188,6 +171,35 @@ function startTimer() {
                 blockInput.style.border = '1px solid #686868';
             }, 500);
         }
+
+        // if(inputText.value === event.key) {
+        //     rightValue++;
+        //     inputText.value = textInput[rightValue];
+        //     if(event.key == ' ' || event.key == '-' ) {
+        //         wordsCount++;
+        //         inputWords.innerHTML = wordsCount;
+        //         window.localStorage.setItem('WordsCount', wordsCount);
+        //         document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
+        //     }
+        //     else if(textInput[rightValue]) {
+        //         simbolsCount++;
+        //         inputSimbols.innerHTML = simbolsCount;
+        //         window.localStorage.setItem('SimbolsCount', simbolsCount);
+        //         document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
+        //     }
+            
+
+        // } else {
+        //     errorCount++;
+        //     inputErorr.innerHTML = errorCount;
+        //     window.localStorage.setItem('ErrorsCount', errorCount);
+        //     document.querySelector('.tt-count-error-res').innerHTML = errorCount;
+        //     setTimeout(backSpace, 0);
+        //     blockInput.style.border = '1px solid red';
+        //     setTimeout(()=>{
+        //         blockInput.style.border = '1px solid #686868';
+        //     }, 500);
+        // }
     });
 
     if(location.reload) {
@@ -207,5 +219,22 @@ function startTimer() {
             } else if(storageWords == '100') {
                 console.log('100');
             }
+        }
+    }
+
+    function e(event) {
+        rightValue++;
+        inputText.value = textInput[rightValue];
+        if(event.key == ' ' || event.key == '-' ) {
+            wordsCount++;
+            inputWords.innerHTML = wordsCount;
+            window.localStorage.setItem('WordsCount', wordsCount);
+            document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
+        }
+        else if(textInput[rightValue]) {
+            simbolsCount++;
+            inputSimbols.innerHTML = simbolsCount;
+            window.localStorage.setItem('SimbolsCount', simbolsCount);
+            document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
         }
     }
