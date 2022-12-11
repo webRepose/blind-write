@@ -1,14 +1,4 @@
 'use strict';
-const ua = window.navigator.userAgent;
-if (ua.indexOf("MSIE ") > 0 || ua.indexOf("Trident") > 0) {
-    window.location.href = "microsoft-edge:" + window.location.href;
-
-    setTimeout(function () {
-        window.location.href = "https://support.microsoft.com/en-us/microsoft-edge/this-website-doesn-t-work-in-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554";
-    }, 0);
-}
-
-
 // let counterClickHome = 0;
 // document.querySelector("#type-home").addEventListener("click",()=>{
 //     counterClickCode = 0;
@@ -128,12 +118,25 @@ if (ua.indexOf("MSIE ") > 0 || ua.indexOf("Trident") > 0) {
 //     })
 // })
 
-function consWait() {
-    console.log('wait')
-}
+
+// <![CDATA[
+
+// insert teh codez
+
 
 
 $(document).ready(()=>{
+    function consWait() {
+        console.log('wait')
+    }
+    const ua = window.navigator.userAgent;
+    if (ua.indexOf("MSIE ") > 0 || ua.indexOf("Trident") > 0) {
+    window.location.href = "microsoft-edge:" + window.location.href;
+
+    setTimeout(function () {
+        window.location.href = "https://support.microsoft.com/en-us/microsoft-edge/this-website-doesn-t-work-in-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554";
+    }, 0);
+    }
     const urlAjax = (url, script)=>{
         $("main").empty();
         $.ajax({
@@ -155,18 +158,20 @@ $(document).ready(()=>{
     }
     
     $('.type-home').click(()=>{
-        urlAjax('main/home.html')
+        urlAjax('/main/home.html')
     })
     $('.type-text').click(()=>{
-        urlAjax('text/setting.html', 'text/setting.js')
+        urlAjax('/text/setting.html', 'text/setting.js')
     })
     $('.type-code').click(()=>{
-        urlAjax('code/setting.html', 'code/code.js')
+        urlAjax('/code/setting.html', 'code/code.js')
     })
     $('.type-capcha').click(()=>{
-        urlAjax('capcha/capcha.html', 'capcha/capcha.js')
+        urlAjax('/capcha/capcha.html', 'capcha/capcha.js')
     })
     $('.type-symbol').click(()=>{
-        urlAjax('symbol/setting.html', 'symbol/symbol.js')
+        urlAjax('/symbol/setting.html', 'symbol/symbol.js')
     })
 })
+
+// ]]>
