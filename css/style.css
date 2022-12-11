@@ -134,7 +134,7 @@ button {
 }
 
 .tt-input-result {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100%;
   height: 100%;
@@ -143,6 +143,8 @@ button {
   top: 0;
   left: 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tt-input-blur-res {

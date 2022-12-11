@@ -156,9 +156,9 @@ function startTimer() {
         // } else if(inputText.value === 'а') {
         //     d = 70
         // }
-        console.log(event.keyCode)
+        // console.log(event.keyCode)
         startTimer();
-        if(event.keyCode == inputText.value) {
+        if(inputText.value === event.key) {
             rightValue++;
             inputText.value = textInput[rightValue];
             if(event.key == ' ' || event.key == '-' ) {

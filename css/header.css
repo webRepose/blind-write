@@ -17,6 +17,7 @@
   list-style: none;
 }
 .header .menu-list a {
+  cursor: pointer;
   padding: 10px;
   font-size: 32px;
   font-weight: 400;
@@ -48,7 +49,7 @@
   cursor: pointer;
 }
 .header-lang:hover {
-  border: 1px solid --border-color;
+  border: 1px solid var(--border-color);
 }
 .header-account {
   cursor: pointer;
