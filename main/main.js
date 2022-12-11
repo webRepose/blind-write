@@ -11,6 +11,24 @@ $(document).ready(()=>{
         window.location.href = "https://support.microsoft.com/en-us/microsoft-edge/this-website-doesn-t-work-in-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554";
     }, 0);
     }
+    const urlAjaxNoScript = (url)=>{
+        $("main").empty();
+        $.ajax({
+            url: url,
+            type: 'GET',
+            datatype : "application/html",
+            contentType: "text/html",
+            cache: false,
+            beforeSend: consWait,
+            success: function(data){
+                console.log(url);
+                $('main').html(data);
+            },
+            catch: function(e){
+                console.log(e);
+            }
+        });
+    }
     const urlAjax = (url, script)=>{
         $("main").empty();
         $.ajax({
@@ -18,7 +36,7 @@ $(document).ready(()=>{
             type: 'GET',
             datatype : "application/html",
             contentType: "text/html",
-            // cache: false,
+            cache: false,
             beforeSend: consWait,
             success: function(data){
                 console.log(url);
@@ -32,7 +50,7 @@ $(document).ready(()=>{
     };
     
     $('.type-home').click(()=>{
-        urlAjax('./main/home.html');
+        urlAjaxNoScript('./main/home.html');
     });
     $('.type-text').click(()=>{
         urlAjax('./text/setting.html', 'text/setting.js');
