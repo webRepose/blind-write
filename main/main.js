@@ -75,7 +75,7 @@ $(document).ready(()=>{
     });
 
     $('.type-text').click(()=>{
-        window.history.pushState(null, '', '../text');
+        window.history.pushState(null, '', '/text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
             urlAjaxNoScript('/text/main.html');
@@ -83,7 +83,7 @@ $(document).ready(()=>{
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
-        window.history.pushState(null, '', '../code');
+        window.history.pushState(null, '', '/code');
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
             urlAjaxNoScript('/code/main.html');
@@ -91,7 +91,7 @@ $(document).ready(()=>{
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
-        window.history.pushState(null, '', '../capcha');
+        window.history.pushState(null, '', '/capcha');
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
             urlAjaxNoScript('/capcha/main.html');
@@ -99,7 +99,7 @@ $(document).ready(()=>{
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
-        window.history.pushState(null, '', '../symbol');
+        window.history.pushState(null, '', '/symbol');
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
             urlAjaxNoScript('/symbol/main.html')
