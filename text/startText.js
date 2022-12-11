@@ -147,20 +147,20 @@ function startTimer() {
     errorCount = 0,
     wordsCount = 0,
     rightValue = 0;
-    inputArea.addEventListener('keypress', (event)=>{
+    inputArea.addEventListener('keyup', (event)=>{
         if(event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46 || event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18 || event.keyCode == 20 || event.keyCode == 19) {
             return false
         }
 
-        startTimer();
-        console.log(event.keyCode)
-        if(event.keyCode === 1044) {
-            d = 'Д'
-        } else if (event.keyCode === 1072) {
-            d = 'а'
-        }
+        // startTimer();
+        // console.log(event.code)
+        // if(event.keyCode === 1044) {
+        //     d = 'Д'
+        // } else if (event.keyCode === 1072) {
+        //     d = 'а'
+        // }
 
-        if(inputText.value === d) {
+        if(inputText.value === event.key) {
             rightValue++;
             inputText.value = textInput[rightValue];
             if(event.key == ' ' || event.key == '-' ) {
@@ -209,38 +209,3 @@ function startTimer() {
             }
         }
     }
-
-    // function e(event) {
-    //     rightValue++;
-    //     inputText.value = textInput[rightValue];
-    //     if(event.key == ' ' || event.key == '-' ) {
-    //         wordsCount++;
-    //         inputWords.innerHTML = wordsCount;
-    //         window.localStorage.setItem('WordsCount', wordsCount);
-    //         document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
-    //     }
-    //     else if(textInput[rightValue]) {
-    //         simbolsCount++;
-    //         inputSimbols.innerHTML = simbolsCount;
-    //         window.localStorage.setItem('SimbolsCount', simbolsCount);
-    //         document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
-    //     }
-    // }
-
-    // if(inputText.value === 'Д') {
-    //     e()
-    // }
-    // else if(inputText.value === 'а') {
-    //     e()
-    // }
-    // else {
-    //     errorCount++;
-    //     inputErorr.innerHTML = errorCount;
-    //     window.localStorage.setItem('ErrorsCount', errorCount);
-    //     document.querySelector('.tt-count-error-res').innerHTML = errorCount;
-    //     setTimeout(backSpace, 0);
-    //     blockInput.style.border = '1px solid red';
-    //     setTimeout(()=>{
-    //         blockInput.style.border = '1px solid #686868';
-    //     }, 500);
-    // }
