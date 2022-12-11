@@ -25,7 +25,6 @@ $(document).ready(()=>{
             signal: controller.signal,
             beforeSend: consWait,
             success: function(data){
-                console.log(url);
                 $('main').html(data);
             },
             complete: ()=>{
@@ -36,32 +35,6 @@ $(document).ready(()=>{
             }
         });
     }
-    const urlAjax = (url, script)=>{
-        let complete = true;
-        $("main").empty();
-        $.ajax({
-            url: url,
-            type: 'GET',
-            datatype : "application/html",
-            contentType: "text/html",
-            cache: false,
-            beforeSend: consWait,
-            success: function(data){
-                if(complete===true) {
-                    console.log(url);
-                    $('main').html(data);
-                }
-            },
-
-            catch: function(e){
-                console.log(e);
-            }
-        });
-         $.getScript(script);
-         return ()=>{
-            complete = false;
-        };
-    };
 
     const navBar = (prev, now)=>{
         $('.type-' + prev).attr('id', 'random');
@@ -79,28 +52,28 @@ $(document).ready(()=>{
     $('.type-text').click(()=>{
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjax('./text/setting.html', 'text/setting.js');
+            urlAjaxNoScript('./text/setting.html');
         }
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjax('./code/setting.html', 'code/code.js');
+            urlAjaxNoScript('./code/setting.html');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjax('./capcha/capcha.html', 'capcha/capcha.js');
+            urlAjaxNoScript('./capcha/capcha.html');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjax('./symbol/setting.html', 'symbol/symbol.js')
+            urlAjaxNoScript('./symbol/setting.html')
         }
         homeLink = 'symbol';
     });
