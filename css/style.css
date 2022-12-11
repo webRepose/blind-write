@@ -194,7 +194,7 @@ button {
   border: 0;
   font-size: 40px;
   color: #DFD2D2;
-  background-color: var(--otherBack-color);
+  background-color: var(--green-color);
 }
 
 .block {

@@ -90,9 +90,6 @@
   margin-top: 7px;
   transition: all 0.3s ease;
 }
-.tt-char span button:hover {
-  background-color: #131418;
-}
 .tt-char .tt-start-link {
   padding: 0;
 }
@@ -258,7 +255,7 @@
   width: 22px;
   height: 22px;
   position: relative;
-  top: 10px;
+  top: 9px;
   margin-left: 10px;
 }
 
@@ -267,6 +264,7 @@
 }
 .history button {
   margin: 40px 0 20px 0;
+  background-color: var(--green-color);
 }
 .history span {
   display: flex;

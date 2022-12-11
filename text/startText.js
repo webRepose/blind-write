@@ -151,14 +151,14 @@ function startTimer() {
         if(event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46 || event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18 || event.keyCode == 20 || event.keyCode == 19) {
             return false
         }
-        // if(inputText.value === 'Д') {
-        //    d = 76
-        // } else if(inputText.value === 'а') {
-        //     d = 70
-        // }
+        if(inputText.value === 'Д') {
+           d = 76
+        } else if(inputText.value === 'а') {
+            d = 70
+        }
         // console.log(event.keyCode)
         startTimer();
-        if(inputText.value === event.key) {
+        if(event.keyCode === d) {
             rightValue++;
             inputText.value = textInput[rightValue];
             if(event.key == ' ' || event.key == '-' ) {
