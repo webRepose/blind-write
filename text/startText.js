@@ -179,37 +179,38 @@ function startTimer() {
         }
     });
 
-    inputArea.addEventListener('touchstart', (event)=>{
-        startTimer();
-        if(inputText.value === event.key) {
-            rightValue++;
-            inputText.value = textInput[rightValue];
-            if(event.key == ' ' || event.key == '-' ) {
-                wordsCount++;
-                inputWords.innerHTML = wordsCount;
-                window.localStorage.setItem('WordsCount', wordsCount);
-                document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
-            }
-            else if(textInput[rightValue]) {
-                simbolsCount++;
-                inputSimbols.innerHTML = simbolsCount;
-                window.localStorage.setItem('SimbolsCount', simbolsCount);
-                document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
-            }
+
+    // inputArea.addEventListener('touchend', (event)=>{
+    //     startTimer();
+    //     if(inputText.value === event.key) {
+    //         rightValue++;
+    //         inputText.value = textInput[rightValue];
+    //         if(event.key == ' ' || event.key == '-' ) {
+    //             wordsCount++;
+    //             inputWords.innerHTML = wordsCount;
+    //             window.localStorage.setItem('WordsCount', wordsCount);
+    //             document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
+    //         }
+    //         else if(textInput[rightValue]) {
+    //             simbolsCount++;
+    //             inputSimbols.innerHTML = simbolsCount;
+    //             window.localStorage.setItem('SimbolsCount', simbolsCount);
+    //             document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
+    //         }
             
 
-        } else {
-            errorCount++;
-            inputErorr.innerHTML = errorCount;
-            window.localStorage.setItem('ErrorsCount', errorCount);
-            document.querySelector('.tt-count-error-res').innerHTML = errorCount;
-            setTimeout(backSpace, 0);
-            blockInput.style.border = '1px solid red';
-            setTimeout(()=>{
-                blockInput.style.border = '1px solid #686868';
-            }, 500);
-        }
-    });
+    //     } else {
+    //         errorCount++;
+    //         inputErorr.innerHTML = errorCount;
+    //         window.localStorage.setItem('ErrorsCount', errorCount);
+    //         document.querySelector('.tt-count-error-res').innerHTML = errorCount;
+    //         setTimeout(backSpace, 0);
+    //         blockInput.style.border = '1px solid red';
+    //         setTimeout(()=>{
+    //             blockInput.style.border = '1px solid #686868';
+    //         }, 500);
+    //     }
+    // });
 
     if(location.reload) {
         window.localStorage.setItem('SimbolsCount', simbolsCount);
@@ -230,42 +231,3 @@ function startTimer() {
             }
         }
     }
-
-            // console.log(event.keyCode)
-
-        // if(inputText.value === 'Д') {
-        //     // e()
-        //     rightValue++;
-        //     inputText.value = textInput[rightValue];
-        //     if(event.key == ' ' || event.key == '-' ) {
-        //         wordsCount++;
-        //         inputWords.innerHTML = wordsCount;
-        //         window.localStorage.setItem('WordsCount', wordsCount);
-        //         document.querySelector('.tt-count-word-res').innerHTML = wordsCount;
-        //     }
-        //     else if(textInput[rightValue]) {
-        //         simbolsCount++;
-        //         inputSimbols.innerHTML = simbolsCount;
-        //         window.localStorage.setItem('SimbolsCount', simbolsCount);
-        //         document.querySelector('.tt-count-simbol-res').innerHTML = simbolsCount;
-        //     }
-        // }
-        // // else if(inputText.value === 'а') {
-        // //     e()
-        // // }
-        // else {
-        //     errorCount++;
-        //     inputErorr.innerHTML = errorCount;
-        //     window.localStorage.setItem('ErrorsCount', errorCount);
-        //     document.querySelector('.tt-count-error-res').innerHTML = errorCount;
-        //     setTimeout(backSpace, 0);
-        //     blockInput.style.border = '1px solid red';
-        //     setTimeout(()=>{
-        //         blockInput.style.border = '1px solid #686868';
-        //     }, 500);
-        // }
-
-
-                // if(event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46 || event.keyCode == 16 || event.keyCode == 17 || event.keyCode == 18 || event.keyCode == 20 || event.keyCode == 19) {
-        //     return false
-        // }

@@ -119,7 +119,7 @@ if (ua.indexOf("MSIE ") > 0 || ua.indexOf("Trident") > 0) {
 
 // let count = 0;
 // $(()=>{
-//     $('#type-text').on('click', ()=>{
+//     $('#type-text').on( ()=>{
 //         count++
 //         if(count > 1) {
 //             return false
@@ -132,162 +132,41 @@ function consWait() {
     console.log('wait')
 }
 
-// function consSuccess() {
-//     $()
-// }
 
-
-// let m = 0;
-// let b = 0;
 $(document).ready(()=>{
-    // function addScript(src) {
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.src = src;
-    //     document.getElementsByTagName('main')[0].appendChild(s);
-    //     return s;  // to remove it later
-    // }
-    $('.type-text').bind('click',()=>{
-        // m++
-        // if(m>1) {
-        //     return false
-        // }
+    const urlAjax = (url, script)=>{
+        $("main").empty();
         $.ajax({
-            url: 'text/setting.html',
+            url: url,
             type: 'GET',
             datatype : "application/html",
             contentType: "text/html",
-            cache: false,
-            beforeSend: consWait,
+            // cache: false,
+            // beforeSend: consWait,
             success: function(data){
-                // $('main').html(data);
-                $("main").empty();$('main').html(data);
-                // $("script#d").remove();
-                // delete $("script#d");
+                console.log(url)
+                $('main').html(data);
+            },
+            catch: function(e){
+                console.log(e)
             }
         })
-        // $.getScript('text/setting.js')
-        // $.ajaxSetup({
-        //     cache: false
-        //  });
-
-        // b++
-        // if(b>1) {
-        //     return false
-        // }
-        // cache.delete(request,{options}).then(function() {
-        //     // запись была удалена
-        //   });
-         $.getScript( 'text/setting.js' );
-        // addScript('text/setting.js')
+         $.getScript(script);
+    }
+    
+    $('.type-home').click(()=>{
+        urlAjax('main/home.html')
     })
-})
-
-
-$(document).ready(()=>{
-    // function addScript(src) {
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.src = src;
-    //     document.getElementsByTagName('main')[0].appendChild(s);
-    //     return s;  // to remove it later
-    // }
-    $('#type-code').bind('click',()=>{
-        // b = 0
-        // m = 0
-        $.ajax({
-            url: 'code/code.html',
-            type: 'GET',
-            datatype : "application/html",
-            contentType: "text/html",
-            cache: false,
-            ifModified: true ,
-            beforeSend: consWait,
-            success: function(data){
-                // $('main').html(data);
-                $("main").empty();$('main').html(data);
-            }
-        })
-        // $.getScript('text/setting.js')
-        // addScript('text/setting.js')
+    $('.type-text').click(()=>{
+        urlAjax('text/setting.html', 'text/setting.js')
     })
-})
-
-$(document).ready(()=>{
-    // function addScript(src) {
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.src = src;
-    //     document.getElementsByTagName('main')[0].appendChild(s);
-    //     return s;  // to remove it later
-    // }
-    $('#type-capcha').bind('click',()=>{
-        $.ajax({
-            url: 'capcha/setting.html',
-            type: 'GET',
-            datatype : "application/html",
-            contentType: "text/html",
-            cache: false,
-            beforeSend: consWait,
-            success: function(data){
-                // $('main').html(data);
-                $("main").empty();$('main').html(data);
-            }
-        })
-        // $.getScript('text/setting.js')
-        // addScript('text/setting.js')
+    $('.type-code').click(()=>{
+        urlAjax('code/setting.html', 'code/code.js')
     })
-})
-
-$(document).ready(()=>{
-    // function addScript(src) {
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.src = src;
-    //     document.getElementsByTagName('main')[0].appendChild(s);
-    //     return s;  // to remove it later
-    // }
-    $('#type-symbol').bind('click',()=>{
-        $.ajax({
-            url: 'symbol/setting.html',
-            type: 'GET',
-            datatype : "application/html",
-            contentType: "text/html",
-            cache: false,
-            beforeSend: consWait,
-            success: function(data){
-                // $('main').html(data);
-                $("main").empty();$('main').html(data);
-            }
-        })
-        // $.getScript('text/setting.js')
-        // addScript('text/setting.js')
+    $('.type-capcha').click(()=>{
+        urlAjax('capcha/capcha.html', 'capcha/capcha.js')
     })
-})
-
-
-$(document).ready(()=>{
-    // function addScript(src) {
-    //     var s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.src = src;
-    //     document.getElementsByTagName('main')[0].appendChild(s);
-    //     return s;  // to remove it later
-    // }
-    $('#type-home').bind('click',()=>{
-        $.ajax({
-            url: 'main/home.html',
-            type: 'GET',
-            datatype : "application/html",
-            contentType: "text/html",
-            cache: false,
-            beforeSend: consWait,
-            success: function(data){
-                // $('main').html(data);
-                $("main").empty();$('main').html(data);
-            }
-        })
-        // $.getScript('text/setting.js')
-        // addScript('text/setting.js')
+    $('.type-symbol').click(()=>{
+        urlAjax('symbol/setting.html', 'symbol/symbol.js')
     })
 })

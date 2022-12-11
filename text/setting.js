@@ -5,11 +5,11 @@
 
 // setTimeout(window.localStorage.setItem('url', 'text/setting.html'), 0)
 
-const ttRu = document.querySelector('#tt-ru-button'),
+var ttRu = document.querySelector('#tt-ru-button'),
 ttEn = document.querySelector('#tt-en-button'),
 ttLang = window.localStorage.getItem('lang');
-const transpBorder = '1px solid transparent';
-const visibleBorder = '1px solid #686868';
+var transpBorder = '1px solid transparent';
+var visibleBorder = '1px solid #686868';
 
 if(ttLang == 'ru') {
     window.localStorage.setItem('langTT', 'ru');
@@ -45,7 +45,7 @@ function wordsReset() {
 }
 
 window.localStorage.setItem('min', 'one');
-const ttTimeOne = document.querySelector('.one-min'),
+var ttTimeOne = document.querySelector('.one-min'),
 ttTimeThree = document.querySelector('.two-min'),
 ttTimeFive = document.querySelector('.three-min');
 
@@ -68,7 +68,7 @@ ttTimeFive.addEventListener('click', ()=>{
         ttTimeOne.classList.remove('border');
 })
 
-const ttWordOne = document.querySelector('.one-words'),
+var ttWordOne = document.querySelector('.one-words'),
 ttWordTwo = document.querySelector('.two-words'),
 ttWordThree = document.querySelector('.three-words');
 
@@ -92,7 +92,7 @@ ttWordThree.addEventListener('click', ()=>{
 })
 
 
-const ttTime = document.querySelector('#tt-mode-time'),
+var ttTime = document.querySelector('#tt-mode-time'),
 ttWord = document.querySelector('#tt-mode-word'),
 ttTimeBlock = document.querySelector('#tt-time-block'),
 ttWordBlock = document.querySelector('#tt-word-block');
