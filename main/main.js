@@ -1,5 +1,7 @@
 'use strict';
 $(document).ready(()=>{
+    let homeLink = 'home';
+
     function consWait() {
         console.log('wait');
     }
@@ -12,6 +14,7 @@ $(document).ready(()=>{
     }, 0);
     }
     const urlAjaxNoScript = (url)=>{
+        const controller = new AbortController;
         $("main").empty();
         $.ajax({
             url: url,
@@ -19,10 +22,14 @@ $(document).ready(()=>{
             datatype : "application/html",
             contentType: "text/html",
             cache: false,
+            signal: controller.signal,
             beforeSend: consWait,
             success: function(data){
                 console.log(url);
                 $('main').html(data);
+            },
+            complete: ()=>{
+                controller.abort();
             },
             catch: function(e){
                 console.log(e);
@@ -30,6 +37,7 @@ $(document).ready(()=>{
         });
     }
     const urlAjax = (url, script)=>{
+        let complete = true;
         $("main").empty();
         $.ajax({
             url: url,
@@ -39,29 +47,61 @@ $(document).ready(()=>{
             cache: false,
             beforeSend: consWait,
             success: function(data){
-                console.log(url);
-                $('main').html(data);
+                if(complete===true) {
+                    console.log(url);
+                    $('main').html(data);
+                }
             },
+
             catch: function(e){
                 console.log(e);
             }
         });
          $.getScript(script);
+         return ()=>{
+            complete = false;
+        };
     };
-    
+
+    const navBar = (prev, now)=>{
+        $('.type-' + prev).attr('id', 'random');
+        $('.type-' + now).attr('id', '_selected');
+    }
+
     $('.type-home').click(()=>{
-        urlAjaxNoScript('./main/home.html');
+        navBar(homeLink, 'home');
+        if(homeLink !== 'home') {
+            urlAjaxNoScript('./main/home.html');   
+        }
+        homeLink = 'home';
     });
+
     $('.type-text').click(()=>{
-        urlAjax('./text/setting.html', 'text/setting.js');
+        navBar(homeLink, 'text');
+        if(homeLink !== 'text'){
+            urlAjax('./text/setting.html', 'text/setting.js');
+        }
+        homeLink = 'text';
     });
     $('.type-code').click(()=>{
-        urlAjax('./code/setting.html', 'code/code.js');
+        navBar(homeLink, 'code');
+        if(homeLink !== 'code') {
+            urlAjax('./code/setting.html', 'code/code.js');
+        }
+        homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
-        urlAjax('./capcha/capcha.html', 'capcha/capcha.js');
+        navBar(homeLink, 'capcha');
+        if(homeLink !== 'capcha') {
+            urlAjax('./capcha/capcha.html', 'capcha/capcha.js');
+        }
+        homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
-        urlAjax('./symbol/setting.html', 'symbol/symbol.js');
+        navBar(homeLink, 'symbol');
+        if(homeLink !== 'symbol') {
+            urlAjax('./symbol/setting.html', 'symbol/symbol.js')
+        }
+        homeLink = 'symbol';
     });
 });

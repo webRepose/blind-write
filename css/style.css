@@ -121,6 +121,10 @@ button {
   display: block;
 }
 
+#_selected {
+  color: red;
+}
+
 ._activeFlex {
   display: flex;
 }
