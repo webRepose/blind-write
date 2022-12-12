@@ -78,31 +78,30 @@ $(document).ready(()=>{
     });
 
     $('.type-text').click(()=>{
-        window.history.pushState(null, '', 'text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjaxNoScript(gitUrl + 'text/main.html', 'text');
+            urlAjaxNoScript(gitUrl + 'text/main.html', '/text');
         }
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript(gitUrl + 'code/main.html', 'code');
+            urlAjaxNoScript(gitUrl + 'code/main.html', '/code');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript(gitUrl + 'capcha/main.html', 'capcha');
+            urlAjaxNoScript(gitUrl + 'capcha/main.html', '/capcha');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript(gitUrl + 'symbol/main.html' , 'symbol');
+            urlAjaxNoScript(gitUrl + 'symbol/main.html' , '/symbol');
         }
         homeLink = 'symbol';
     });
