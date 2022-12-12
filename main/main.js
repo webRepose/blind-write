@@ -15,8 +15,8 @@ $(document).ready(()=>{
     $(window).on('popstate', (e)=>{
         const urlPath = document.location.pathname;
         console.log(urlPath)
-        if(urlPath === '') {
-            urlAjaxNoScript('/blind-write/main/main.html');
+        if(urlPath === '/') {
+            urlAjaxNoScript('/');
         } else {
             urlAjaxNoScript('/blind-write' + urlPath + '/main.html');
         }
@@ -102,5 +102,13 @@ $(document).ready(()=>{
             urlAjaxNoScript('/blind-write/symbol/main.html')
         }
         homeLink = 'symbol';
+    });
+    $('.type-history').click(()=>{
+        window.history.pushState(null, '', '../history');
+        navBar(homeLink, 'symbol');
+        if(homeLink !== 'symbol') {
+            urlAjaxNoScript('/blind-write/main/history.html')
+        }
+        homeLink = 'history';
     });
 });
