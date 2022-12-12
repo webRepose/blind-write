@@ -8,19 +8,19 @@ $(document).ready(()=>{
     $(window).on('load', ()=>{
         history.pushState(null, '', window.location.pathname.slice(0, window.location.pathname.length - 1))
         const urlPath = document.location.pathname.replace(gitUrl, '');
-        console.log(urlPath)
+        // console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
             urlAjaxNoScript(gitUrl + 'main.html');
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('result dan')
+        console.log('result 123123123')
     })
 
     $(window).on('popstate', (e)=>{
-        const urlPath = document.location.pathname.replace(gitUrl, '');
-        console.log(urlPath)
+        const urlPath = window.location.pathname.replace(gitUrl, '');
+        // console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
             urlAjaxNoScript(gitUrl + 'main.html');
@@ -64,10 +64,7 @@ $(document).ready(()=>{
             signal: controller.signal,
             beforeSend: consWait,
             success: function(data){
-                setTimeout(()=>{
-                    $('main').html(data);
-                }, [500])
-                // $('main').html(data);
+                $('main').html(data);
             },
             complete: ()=>{
                 controller.abort();
@@ -124,11 +121,11 @@ $(document).ready(()=>{
 
     // $('.type-history').click(()=>{
     //     console.log('hello')
-        // window.history.pushState(null, '', '../history');
-        // navBar(homeLink, 'history');
-        // if(homeLink !== 'history') {
-        //     urlAjaxNoScript('/blind-write/histoy/main.html')
-        // }
-        // homeLink = 'history';
+    //     window.history.pushState(null, '', '../history');
+    //     navBar(homeLink, 'history');
+    //     if(homeLink !== 'history') {
+    //         urlAjaxNoScript('/blind-write/histoy/main.html')
+    //     }
+    //     homeLink = 'history';
     // });
 });
