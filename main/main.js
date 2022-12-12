@@ -14,7 +14,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 22545')
+        console.log('res 45')
     })
 
     $(window).on('popstate', (e)=>{
