@@ -37,7 +37,7 @@ $(document).ready(()=>{
         window.location.href = "https://support.microsoft.com/en-us/microsoft-edge/this-website-doesn-t-work-in-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554";
     }, 0);
     }
-    const urlAjaxNoScript = (url)=>{
+    const urlAjaxNoScript = (url, history)=>{
         const controller = new AbortController;
         $("main").empty();
         $.ajax({
@@ -53,6 +53,7 @@ $(document).ready(()=>{
             },
             complete: ()=>{
                 controller.abort();
+                window.history.pushState(null, '', history);
             },
             catch: function(e){
                 console.log(e);
@@ -69,44 +70,39 @@ $(document).ready(()=>{
         console.log('result ' + 'home2')
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
-            urlAjaxNoScript('/blind-write/main/main.html');   
+            urlAjaxNoScript('main/main.html', '');   
         }
         homeLink = 'home';
-        window.history.pushState(null, '', '');
     });
 
     $('.type-text').click(()=>{
         window.history.pushState(null, '', 'text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjaxNoScript('/blind-write/text/main.html');
+            urlAjaxNoScript('text/main.html', 'text');
         }
         homeLink = 'text';
-        window.history.pushState(null, '', 'text');
     });
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript('/blind-write/code/main.html');
+            urlAjaxNoScript('code/main.html', 'code');
         }
         homeLink = 'code';
-        window.history.pushState(null, '', 'code');
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript('/blind-write/capcha/main.html');
+            urlAjaxNoScript('capcha/main.html', 'capcha');
         }
         homeLink = 'capcha';
-        window.history.pushState(null, '', 'capcha');
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript('/blind-write/symbol/main.html');
+            urlAjaxNoScript('symbol/main.html' , 'symbol');
         }
         homeLink = 'symbol';
-        window.history.pushState(null, '', 'symbol');
     });
 
     // $('.type-history').click(()=>{
