@@ -18,7 +18,7 @@ $(document).ready(()=>{
         if(urlPath === '/') {
             urlAjaxNoScript('/main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + 'main.html');
+            urlAjaxNoScript(urlPath + '/main.html');
         }
     })
 
@@ -63,7 +63,7 @@ $(document).ready(()=>{
 
     $('.type-home').click(()=>{
         console.log('result ' + document.location.pathname)
-        window.history.pushState(null, '', '/blind-write/');
+        window.history.pushState(null, '', '../');
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
             urlAjaxNoScript('/blind-write/main/main.html');   
@@ -72,7 +72,7 @@ $(document).ready(()=>{
     });
 
     $('.type-text').click(()=>{
-        window.history.pushState(null, '', '/blind-write/text');
+        window.history.pushState(null, '', '../text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
             urlAjaxNoScript('/blind-write/text/main.html');
@@ -80,7 +80,7 @@ $(document).ready(()=>{
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
-        window.history.pushState(null, '', '/blind-write/code');
+        window.history.pushState(null, '', '../code');
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
             urlAjaxNoScript('/blind-write/code/main.html');
@@ -88,7 +88,7 @@ $(document).ready(()=>{
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
-        window.history.pushState(null, '', '/blind-write/capcha');
+        window.history.pushState(null, '', '../capcha');
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
             urlAjaxNoScript('/blind-write/capcha/main.html');
@@ -96,7 +96,7 @@ $(document).ready(()=>{
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
-        window.history.pushState(null, '', '/blind-write/symbol');
+        window.history.pushState(null, '', '../symbol');
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
             urlAjaxNoScript('/blind-write/symbol/main.html')
