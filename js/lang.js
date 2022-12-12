@@ -69,14 +69,14 @@ let txt = {
         menuLang.classList.remove('_active');
         menuLang.classList.toggle('_disabled');
         // location.href = window.location.pathname + '#ru';
-        location.reload();
+        // location.reload();
     })
     document.querySelector('#En').addEventListener('click', ()=> {
         langText.innerHTML = 'En';
         menuLang.classList.remove('_active');
         menuLang.classList.toggle('_disabled');
         // location.href = window.location.pathname + '#en';
-        location.reload();
+        // location.reload();
     })
   
   document.getElementById('En').addEventListener('click', setLang.bind(null,'en'));
@@ -98,8 +98,8 @@ let txt = {
   
   if(lang == 'ru') {
       document.querySelector('#lang-text').innerHTML = 'Ru';
-    //   location.href = window.location.pathname + '#ru';
+      // location.href = window.location.pathname + '#ru';
   } else if(lang == 'en') {
       document.querySelector('#lang-text').innerHTML = 'En';
-    //   location.href = window.location.pathname + '#en';
+      // location.href = window.location.pathname + '#en';
   }

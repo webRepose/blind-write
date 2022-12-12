@@ -1,8 +1,5 @@
 'use strict';
 $(document).ready(()=>{
-    // window.location.pathname.substring(0, window.location.pathname.length - 1);
-    // window.location.pathname.replace(/\/+$/, '');
-    
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
 
     $(window).on('load', ()=>{
@@ -66,43 +63,43 @@ $(document).ready(()=>{
 
     $('.type-home').click(()=>{
         console.log('result ' + document.location.pathname)
-        window.history.pushState(null, '', '/');
+        window.history.pushState(null, '', '../');
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
-            urlAjaxNoScript('./../main/main.html');   
+            urlAjaxNoScript('/blind-write/main/main.html');   
         }
         homeLink = 'home';
     });
 
     $('.type-text').click(()=>{
-        window.history.pushState(null, '', 'text');
+        window.history.pushState(null, '', '../text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjaxNoScript('/text/main.html');
+            urlAjaxNoScript('/blind-write/text/main.html');
         }
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
-        window.history.pushState(null, '', 'code');
+        window.history.pushState(null, '', '../code');
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript('/code/main.html');
+            urlAjaxNoScript('/blind-write/code/main.html');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
-        window.history.pushState(null, '', 'capcha');
+        window.history.pushState(null, '', '../capcha');
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript('/capcha/main.html');
+            urlAjaxNoScript('/blind-write/capcha/main.html');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
-        window.history.pushState(null, '', 'symbol');
+        window.history.pushState(null, '', '../symbol');
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript('/symbol/main.html')
+            urlAjaxNoScript('/blind-write/symbol/main.html')
         }
         homeLink = 'symbol';
     });
