@@ -13,9 +13,9 @@ $(document).ready(()=>{
         if(urlPath === chechReq) {
             urlAjaxNoScript('main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + 'main.html');
+            urlAjaxNoScript(urlPath + '/main.html');
         }
-        console.log('res 300000')
+        console.log('res 3000000000')
     })
 
     $(window).on('popstate', (e)=>{
