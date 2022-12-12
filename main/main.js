@@ -13,7 +13,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 1 3 5 7')
+        console.log('res 5 4 3 8')
     })
 
     $(window).on('popstate', (e)=>{
