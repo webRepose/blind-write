@@ -14,7 +14,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 45')
+        console.log('res 215')
     })
 
     $(window).on('popstate', (e)=>{
@@ -72,7 +72,7 @@ $(document).ready(()=>{
         console.log('result ' + 'home2')
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
-            urlAjaxNoScript(gitUrl + '/main/main.html', '');   
+            urlAjaxNoScript(gitUrl + '/main/main.html', gitUrl + '/');   
         }
         homeLink = 'home';
     });
@@ -80,28 +80,28 @@ $(document).ready(()=>{
     $('.type-text').click(()=>{
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjaxNoScript(gitUrl + 'text/main.html', '/text');
+            urlAjaxNoScript(gitUrl + 'text/main.html', gitUrl + '/text');
         }
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript(gitUrl + 'code/main.html', '/code');
+            urlAjaxNoScript(gitUrl + 'code/main.html', gitUrl + '/code');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript(gitUrl + 'capcha/main.html', '/capcha');
+            urlAjaxNoScript(gitUrl + 'capcha/main.html', gitUrl + '/capcha');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript(gitUrl + 'symbol/main.html' , '/symbol');
+            urlAjaxNoScript(gitUrl + 'symbol/main.html' , gitUrl + '/symbol');
         }
         homeLink = 'symbol';
     });
