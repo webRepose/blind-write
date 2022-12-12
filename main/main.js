@@ -12,7 +12,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('no res')
+        console.log('dsdadada')
     })
 
     $(window).on('popstate', (e)=>{
