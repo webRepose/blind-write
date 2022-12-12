@@ -12,7 +12,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('all now')
+        console.log('all')
     })
 
     $(window).on('popstate', (e)=>{
@@ -125,7 +125,7 @@ $(document).ready(()=>{
     $('#type-textStart').click(()=>{
         navBar(homeLink, 'textStart');
         if(homeLink !== 'textStart') {
-            urlAjaxNoScript(gitUrl + '/' + 'text/typing/start.html' , gitUrl + 'text/typing/start.html')
+            urlAjaxNoScript(gitUrl + '/' + 'text/start.html' , gitUrl + 'text/start.html')
         }
         homeLink = 'textStart';
     });
