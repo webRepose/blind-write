@@ -13,7 +13,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 8  11 12 8')
+        console.log('res 1525 11 12 8')
     })
 
     $(window).on('popstate', (e)=>{
@@ -39,7 +39,7 @@ $(document).ready(()=>{
     }
     const urlAjaxNoScript = (url, history)=>{
         const controller = new AbortController;
-        let urlReq = url.replace(devGit, '')
+        let urlReq = url.replace(gitUrl, '')
         $("main").empty();
         $.ajax({
             url: url,
@@ -71,7 +71,7 @@ $(document).ready(()=>{
         console.log('result ' + 'home2')
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
-            urlAjaxNoScript(devGit + '/main/main.html', '');   
+            urlAjaxNoScript(gitUrl + '/main/main.html', '');   
         }
         homeLink = 'home';
     });
@@ -80,28 +80,28 @@ $(document).ready(()=>{
         window.history.pushState(null, '', 'text');
         navBar(homeLink, 'text');
         if(homeLink !== 'text'){
-            urlAjaxNoScript(devGit + '/text/main.html', 'text');
+            urlAjaxNoScript(gitUrl + '/text/main.html', 'text');
         }
         homeLink = 'text';
     });
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript(devGit + '/code/main.html', 'code');
+            urlAjaxNoScript(gitUrl + '/code/main.html', 'code');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript(devGit + '/capcha/main.html', 'capcha');
+            urlAjaxNoScript(gitUrl + '/capcha/main.html', 'capcha');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript(devGit + '/symbol/main.html' , 'symbol');
+            urlAjaxNoScript(gitUrl + '/symbol/main.html' , 'symbol');
         }
         homeLink = 'symbol';
     });
