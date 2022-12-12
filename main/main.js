@@ -15,7 +15,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('res ')
+        console.log('result')
     })
 
     $(window).on('popstate', (e)=>{
@@ -88,21 +88,21 @@ $(document).ready(()=>{
     $('.type-code').click(()=>{
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
-            urlAjaxNoScript('code/main.html', gitUrl + '/code');
+            urlAjaxNoScript(gitUrl + '/' + 'code/main.html', gitUrl + '/code');
         }
         homeLink = 'code';
     });
     $('.type-capcha').click(()=>{
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
-            urlAjaxNoScript('capcha/main.html', gitUrl + '/capcha');
+            urlAjaxNoScript(gitUrl + '/' + 'capcha/main.html', gitUrl + '/capcha');
         }
         homeLink = 'capcha';
     });
     $('.type-symbol').click(()=>{
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript('symbol/main.html' , gitUrl + '/symbol');
+            urlAjaxNoScript(gitUrl + '/' + 'symbol/main.html' , gitUrl + '/symbol');
         }
         homeLink = 'symbol';
     });
