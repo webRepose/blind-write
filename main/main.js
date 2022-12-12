@@ -63,7 +63,7 @@ $(document).ready(()=>{
 
     $('.type-home').click(()=>{
         console.log('result ' + document.location.pathname)
-        window.history.pushState(null, '', '../');
+        window.history.pushState(null, '', '/');
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
             urlAjaxNoScript('/blind-write/main/main.html');   
@@ -99,17 +99,18 @@ $(document).ready(()=>{
         window.history.pushState(null, '', '../symbol');
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
-            urlAjaxNoScript('/blind-write/symbol/main.html')
+            urlAjaxNoScript('/blind-write/symbol/main.html');
         }
         homeLink = 'symbol';
     });
+
     $('.type-history').click(()=>{
         console.log('hello')
-        window.history.pushState(null, '', '../');
-        navBar(homeLink, 'history');
-        if(homeLink !== 'history') {
-            urlAjaxNoScript('/blind-write/histoy/main.html')
-        }
-        homeLink = 'history';
+        // window.history.pushState(null, '', '../history');
+        // navBar(homeLink, 'history');
+        // if(homeLink !== 'history') {
+        //     urlAjaxNoScript('/blind-write/histoy/main.html')
+        // }
+        // homeLink = 'history';
     });
 });
