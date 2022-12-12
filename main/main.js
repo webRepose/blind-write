@@ -8,7 +8,7 @@ $(document).ready(()=>{
         if(urlPath === '/') {
             urlAjaxNoScript('/main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + '/blind-write/main.html');
+            urlAjaxNoScript(urlPath + '/main.html');
         }
     })
 
@@ -18,7 +18,7 @@ $(document).ready(()=>{
         if(urlPath === '/') {
             urlAjaxNoScript('/main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + '/blind-write/main.html');
+            urlAjaxNoScript(urlPath + '/main.html');
         }
     })
 
