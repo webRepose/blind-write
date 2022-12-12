@@ -104,6 +104,7 @@ $(document).ready(()=>{
         homeLink = 'symbol';
     });
     $('.type-history').click(()=>{
+        console.log('hello')
         window.history.pushState(null, '', '../history');
         navBar(homeLink, 'history');
         if(homeLink !== 'history') {
