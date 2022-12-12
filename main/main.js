@@ -1,15 +1,19 @@
 'use strict';
 $(document).ready(()=>{
+    let devGit = true;
+    let gitUrl = devGit === true ? '': '/blind-write';
+
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
 
     $(window).on('load', ()=>{
         const urlPath = document.location.pathname;
         console.log(urlPath)
         if(urlPath === '/') {
-            urlAjaxNoScript('/main/main.html');
+            urlAjaxNoScript('main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + '/main.html');
+            urlAjaxNoScript(urlPath + 'main.html');
         }
+        console.log('res 2 4 6 8')
     })
 
     $(window).on('popstate', (e)=>{
@@ -18,7 +22,7 @@ $(document).ready(()=>{
         if(urlPath === '/') {
             urlAjaxNoScript('/');
         } else {
-            urlAjaxNoScript('/blind-write' + urlPath + '/main.html');
+            urlAjaxNoScript('/blind-write' + urlPath + 'main.html');
         }
     })
 
