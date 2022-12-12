@@ -15,7 +15,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + '/main.html');
         }
-        console.log('res 3000000000')
+        console.log('res 4524010')
     })
 
     $(window).on('popstate', (e)=>{
@@ -41,10 +41,10 @@ $(document).ready(()=>{
     }
     const urlAjaxNoScript = (url, history)=>{
         const controller = new AbortController;
-        let urlReq = url.replace(gitUrl, '')
+        let urlReq = url.replace(gitUrl, '');
         $("main").empty();
         $.ajax({
-            url: url,
+            url: urlReq,
             type: 'GET',
             datatype : "application/html",
             contentType: "text/html",
