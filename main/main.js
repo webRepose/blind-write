@@ -16,7 +16,7 @@ $(document).ready(()=>{
         const urlPath = document.location.pathname;
         console.log(urlPath)
         if(urlPath === '/') {
-            urlAjaxNoScript('blind-write/main.html');
+            urlAjaxNoScript('main.html');
         } else {
             urlAjaxNoScript('/blind-write' + urlPath + '/main.html');
         }
