@@ -11,11 +11,11 @@ $(document).ready(()=>{
         console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
-            urlAjaxNoScript('main/main.html');
+            urlAjaxNoScript(gitUrl + '/main.html');
         } else {
-            urlAjaxNoScript(urlPath + '/main.html');
+            urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('res 4524010')
+        console.log('res 10')
     })
 
     $(window).on('popstate', (e)=>{
@@ -41,7 +41,7 @@ $(document).ready(()=>{
     }
     const urlAjaxNoScript = (url, history)=>{
         const controller = new AbortController;
-        let urlReq = url.replace(gitUrl, '');
+        let urlReq = url;
         $("main").empty();
         $.ajax({
             url: urlReq,
