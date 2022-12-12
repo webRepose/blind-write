@@ -9,12 +9,13 @@ $(document).ready(()=>{
         history.pushState(null, '', window.location.pathname.slice(0, window.location.pathname.length - 1))
         const urlPath = document.location.pathname.replace(gitUrl, '');
         console.log(urlPath)
-        if(urlPath === '/') {
+        let chechReq = gitUrl + '/';
+        if(urlPath === chechReq) {
             urlAjaxNoScript('main/main.html');
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 3')
+        console.log('res 300000')
     })
 
     $(window).on('popstate', (e)=>{
