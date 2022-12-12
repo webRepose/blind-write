@@ -63,10 +63,10 @@ $(document).ready(()=>{
             signal: controller.signal,
             beforeSend: consWait,
             success: function(data){
-                // setTimeout(()=>{
-                //     $('main').html(data);
-                // }, [200])
-                $('main').html(data);
+                setTimeout(()=>{
+                    $('main').html(data);
+                }, [500])
+                // $('main').html(data);
             },
             complete: ()=>{
                 controller.abort();
