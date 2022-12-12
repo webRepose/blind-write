@@ -115,18 +115,18 @@ $(document).ready(()=>{
         homeLink = 'symbol';
     });
 
-    $('.type-history').click(()=>{
-        navBar(homeLink, 'history');
-        if(homeLink !== 'history') {
-            urlAjaxNoScript(gitUrl + '/' + 'history/history.html' , gitUrl + '/history')
-        }
-        homeLink = 'history';
-    });
-    $('#type-textStart').click(()=>{
-        navBar(homeLink, 'textStart');
-        if(homeLink !== 'textStart') {
-            urlAjaxNoScript(gitUrl + '/' + 'text/start.html' , gitUrl + 'text/start.html')
-        }
-        homeLink = 'textStart';
-    });
+    // $('.type-history').click(()=>{
+    //     navBar(homeLink, 'history');
+    //     if(homeLink !== 'history') {
+    //         urlAjaxNoScript(gitUrl + '/' + 'history/history.html' , gitUrl + '/history')
+    //     }
+    //     homeLink = 'history';
+    // });
+    // $('#type-textStart').click(()=>{
+    //     navBar(homeLink, 'textStart');
+    //     if(homeLink !== 'textStart') {
+    //         urlAjaxNoScript(gitUrl + '/' + 'text/start.html' , gitUrl + 'text/start.html')
+    //     }
+    //     homeLink = 'textStart';
+    // });
 });
