@@ -105,7 +105,7 @@ $(document).ready(()=>{
     });
     $('.type-history').click(()=>{
         console.log('hello')
-        window.history.pushState(null, '', '../history');
+        window.history.pushState(null, '', '../');
         navBar(homeLink, 'history');
         if(homeLink !== 'history') {
             urlAjaxNoScript('/blind-write/main/history.html')
