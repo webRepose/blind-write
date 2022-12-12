@@ -119,13 +119,12 @@ $(document).ready(()=>{
         homeLink = 'symbol';
     });
 
-    // $('.type-history').click(()=>{
-    //     console.log('hello')
-    //     window.history.pushState(null, '', '../history');
-    //     navBar(homeLink, 'history');
-    //     if(homeLink !== 'history') {
-    //         urlAjaxNoScript('/blind-write/histoy/main.html')
-    //     }
-    //     homeLink = 'history';
-    // });
+    $('.type-history').click(()=>{
+        console.log('hello')
+        navBar(homeLink, 'history');
+        if(homeLink !== 'history') {
+            urlAjaxNoScript(gitUrl + '/' + 'main/history.html' , gitUrl + '/main/history.html')
+        }
+        homeLink = 'history';
+    });
 });
