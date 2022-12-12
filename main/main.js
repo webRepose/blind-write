@@ -15,7 +15,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('result finally')
+        console.log('result result')
     })
 
     $(window).on('popstate', (e)=>{
@@ -29,7 +29,18 @@ $(document).ready(()=>{
     })
 
     function consWait() {
-        console.log('wait');
+        $('main').html(`
+        <div class="center-body">
+        <div class="loader-triangle-3">
+        <svg id="triangle" width="50px" height="50px"
+        viewbox="-3 -4 39 39">
+        <polygon fill="transparent" stroke="#ffeb3b"
+        stroke-width="2" points="16,0 32,32 0,32">
+        </polygon>
+        </svg>
+        </div>
+        </div>
+        `)
     }
     const ua = window.navigator.userAgent;
     if (ua.indexOf("MSIE ") > 0 || ua.indexOf("Trident") > 0) {
@@ -52,6 +63,9 @@ $(document).ready(()=>{
             signal: controller.signal,
             beforeSend: consWait,
             success: function(data){
+                // setTimeout(()=>{
+                //     $('main').html(data);
+                // }, [200])
                 $('main').html(data);
             },
             complete: ()=>{
