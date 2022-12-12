@@ -2,25 +2,21 @@
 $(document).ready(()=>{
     let devGit = false;
     let gitUrl = devGit === true ? '' : '/blind-write';
-
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
-
     $(window).on('load', ()=>{
         history.pushState(null, '', window.location.pathname.slice(0, window.location.pathname.length - 1))
         const urlPath = document.location.pathname.replace(gitUrl, '');
-        // console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
             urlAjaxNoScript(gitUrl + 'main.html');
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('res23')
+        console.log('ressdasdad23')
     })
 
     $(window).on('popstate', (e)=>{
         const urlPath = window.location.pathname.replace(gitUrl, '');
-        // console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
             urlAjaxNoScript(gitUrl + 'main.html');
