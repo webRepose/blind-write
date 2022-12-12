@@ -1,7 +1,7 @@
 'use strict';
 $(document).ready(()=>{
     let devGit = false;
-    let gitUrl = devGit === true ? '': '/blind-write';
+    let gitUrl = devGit === true ? '' : '/blind-write';
 
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
 
@@ -13,7 +13,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 9 9 8')
+        console.log('res 8  11 12 8')
     })
 
     $(window).on('popstate', (e)=>{
@@ -39,6 +39,7 @@ $(document).ready(()=>{
     }
     const urlAjaxNoScript = (url, history)=>{
         const controller = new AbortController;
+        let urlReq = url.replace(devGit, '')
         $("main").empty();
         $.ajax({
             url: url,
