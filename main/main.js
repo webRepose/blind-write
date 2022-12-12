@@ -108,7 +108,7 @@ $(document).ready(()=>{
         window.history.pushState(null, '', '../');
         navBar(homeLink, 'history');
         if(homeLink !== 'history') {
-            urlAjaxNoScript('/blind-write/main/history.html')
+            urlAjaxNoScript('/blind-write/histoy/main.html')
         }
         homeLink = 'history';
     });
