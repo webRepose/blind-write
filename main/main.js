@@ -15,7 +15,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('res 10')
+        console.log('res 4440')
     })
 
     $(window).on('popstate', (e)=>{
@@ -73,7 +73,7 @@ $(document).ready(()=>{
         console.log('result ' + 'home2')
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
-            urlAjaxNoScript('main/main.html', gitUrl + '/');   
+            urlAjaxNoScript('/main.html', gitUrl + '/');   
         }
         homeLink = 'home';
     });
