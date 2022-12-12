@@ -7,14 +7,14 @@ $(document).ready(()=>{
 
     $(window).on('load', ()=>{
         history.pushState(null, '', window.location.pathname.slice(0, window.location.pathname.length - 1))
-        const urlPath = document.location.pathname;
+        const urlPath = document.location.pathname.replace(gitUrl, '');
         console.log(urlPath)
         if(urlPath === '/') {
             urlAjaxNoScript('main/main.html');
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 5455')
+        console.log('res 3')
     })
 
     $(window).on('popstate', (e)=>{
