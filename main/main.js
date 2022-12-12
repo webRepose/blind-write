@@ -15,7 +15,7 @@ $(document).ready(()=>{
     $(window).on('popstate', (e)=>{
         const urlPath = document.location.pathname;
         console.log(urlPath)
-        if(urlPath === '/') {
+        if(urlPath === '') {
             urlAjaxNoScript('/blind-write/main/main.html');
         } else {
             urlAjaxNoScript('/blind-write' + urlPath + '/main.html');
