@@ -13,7 +13,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 2 4 6 8')
+        console.log('res 1 3 5 7')
     })
 
     $(window).on('popstate', (e)=>{
@@ -67,12 +67,12 @@ $(document).ready(()=>{
 
     $('.type-home').click(()=>{
         console.log('result ' + 'home2')
-        window.history.pushState(null, '', '');
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
             urlAjaxNoScript('/blind-write/main/main.html');   
         }
         homeLink = 'home';
+        window.history.pushState(null, '', '');
     });
 
     $('.type-text').click(()=>{
@@ -82,30 +82,31 @@ $(document).ready(()=>{
             urlAjaxNoScript('/blind-write/text/main.html');
         }
         homeLink = 'text';
+        window.history.pushState(null, '', 'text');
     });
     $('.type-code').click(()=>{
-        window.history.pushState(null, '', 'code');
         navBar(homeLink, 'code');
         if(homeLink !== 'code') {
             urlAjaxNoScript('/blind-write/code/main.html');
         }
         homeLink = 'code';
+        window.history.pushState(null, '', 'code');
     });
     $('.type-capcha').click(()=>{
-        window.history.pushState(null, '', 'capcha');
         navBar(homeLink, 'capcha');
         if(homeLink !== 'capcha') {
             urlAjaxNoScript('/blind-write/capcha/main.html');
         }
         homeLink = 'capcha';
+        window.history.pushState(null, '', 'capcha');
     });
     $('.type-symbol').click(()=>{
-        window.history.pushState(null, '', 'symbol');
         navBar(homeLink, 'symbol');
         if(homeLink !== 'symbol') {
             urlAjaxNoScript('/blind-write/symbol/main.html');
         }
         homeLink = 'symbol';
+        window.history.pushState(null, '', 'symbol');
     });
 
     // $('.type-history').click(()=>{
