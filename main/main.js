@@ -12,7 +12,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('res res res all')
+        console.log('all')
     })
 
     $(window).on('popstate', (e)=>{
@@ -116,11 +116,17 @@ $(document).ready(()=>{
     });
 
     $('.type-history').click(()=>{
-        console.log('hello')
         navBar(homeLink, 'history');
         if(homeLink !== 'history') {
             urlAjaxNoScript(gitUrl + '/' + 'history/history.html' , gitUrl + '/history')
         }
         homeLink = 'history';
+    });
+    $('#type-textStart').click(()=>{
+        navBar(homeLink, 'textStart');
+        if(homeLink !== 'textStart') {
+            urlAjaxNoScript(gitUrl + '/' + 'text/typing/start.html' , gitUrl + '/text/start')
+        }
+        homeLink = 'textStart';
     });
 });
