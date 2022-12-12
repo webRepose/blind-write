@@ -6,6 +6,7 @@ $(document).ready(()=>{
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
 
     $(window).on('load', ()=>{
+        history.pushState(null, '', window.location.pathname.slice(0, window.location.pathname.length - 1))
         const urlPath = document.location.pathname;
         console.log(urlPath)
         if(urlPath === '/') {
@@ -13,7 +14,7 @@ $(document).ready(()=>{
         } else {
             urlAjaxNoScript(urlPath + 'main.html');
         }
-        console.log('res 5454525 11 12 8')
+        console.log('res 25')
     })
 
     $(window).on('popstate', (e)=>{
