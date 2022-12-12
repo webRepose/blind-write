@@ -62,8 +62,8 @@ $(document).ready(()=>{
     }
 
     $('.type-home').click(()=>{
-        console.log('result ' + document.location.pathname)
-        window.history.pushState(null, '', '/');
+        console.log('result ' + 'home')
+        window.history.pushState(null, '', '');
         navBar(homeLink, 'home');
         if(homeLink !== 'home') {
             urlAjaxNoScript('/blind-write/main/main.html');   
