@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(()=>{
-    let devGit = true;
+    let devGit = false;
     let gitUrl = devGit === true ? '': '/blind-write';
 
     let homeLink = window.location.pathname === '/' ? 'home': window.location.pathname.replace(/\//g, "");
