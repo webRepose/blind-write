@@ -13,7 +13,7 @@ $(document).ready(()=>{
     })
 
     $(window).on('popstate', (e)=>{
-        const urlPath = document.location.pathname + '/blind-write';
+        const urlPath = document.location.pathname;
         console.log(urlPath)
         if(urlPath === '/') {
             urlAjaxNoScript('/main/main.html');
