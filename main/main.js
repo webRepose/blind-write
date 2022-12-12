@@ -13,12 +13,12 @@ $(document).ready(()=>{
     })
 
     $(window).on('popstate', (e)=>{
-        const urlPath = document.location.pathname;
+        const urlPath = document.location.pathname + '/blind-write';
         console.log(urlPath)
         if(urlPath === '/') {
             urlAjaxNoScript('/main/main.html');
         } else {
-            urlAjaxNoScript(urlPath + './main.html');
+            urlAjaxNoScript(urlPath + '/main.html');
         }
     })
 
