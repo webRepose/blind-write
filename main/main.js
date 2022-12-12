@@ -11,20 +11,21 @@ $(document).ready(()=>{
         console.log(urlPath)
         let chechReq = gitUrl + '/';
         if(urlPath === chechReq) {
-            urlAjaxNoScript(gitUrl + '/main.html');
+            urlAjaxNoScript(gitUrl + 'main.html');
         } else {
             urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
-        console.log('result result')
+        console.log('result dan')
     })
 
     $(window).on('popstate', (e)=>{
-        const urlPath = document.location.pathname;
+        const urlPath = document.location.pathname.replace(gitUrl, '');
         console.log(urlPath)
-        if(urlPath === '/') {
-            urlAjaxNoScript('/');
+        let chechReq = gitUrl + '/';
+        if(urlPath === chechReq) {
+            urlAjaxNoScript(gitUrl + 'main.html');
         } else {
-            urlAjaxNoScript('/blind-write' + urlPath + 'main.html');
+            urlAjaxNoScript(gitUrl + '/' + urlPath + '/main.html');
         }
     })
 
